@@ -106,3 +106,14 @@
     </div>
   </div>
 </div>
+
+{% if error == "no" %}
+<script>
+  alert('Registration Successful');
+  window.location = ('{% url 'emp_login' %}');
+</script>
+{% endif %} {% if error == "yes" %}
+<script>
+  alert('Something went wrong, Try Again...');
+</script>
+{% endif %}
