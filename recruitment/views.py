@@ -16,5 +16,7 @@ def registration(request):
         try:
             User.object.create_user(first_name=fn, last_name=ln, username=em, password=pwd)
             EmployeeDetail.objects.create(empcode=ec)
-
+            error="no"
+        except:
+            error="yes"    
     return render(request, 'registration.html')
