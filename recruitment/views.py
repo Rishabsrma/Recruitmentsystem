@@ -80,3 +80,7 @@ def profile(request):
         except:
             error="yes"    
     return render(request, 'profile.html', locals())
+
+
+def admin_login(request):
+    return render(request, 'admin_login.html')
