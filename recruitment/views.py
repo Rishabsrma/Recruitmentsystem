@@ -275,3 +275,11 @@ def change_adminpassword(request):
         except:
             error="yes"    
     return render(request, 'change_adminpassword.html', locals())
+
+
+def all_employee(request):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    
+    employee = EmployeeDetail.objects.all()
+    return render(request, 'all_employee.html', locals())

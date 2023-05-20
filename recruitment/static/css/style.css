@@ -17,3 +17,8 @@
   border-bottom: 2px solid #353455;
   color: rgb(176, 148, 79);
 }
+
+.active {
+  background-color: #524eb7;
+  border-radius: 30px;
+}
