@@ -121,7 +121,7 @@
           </div>
         </div>
 
-        <input type="submit" value="Submit" class="m-2 px-3 btn btn-primary" />
+        <input type="submit" value="Save" class="m-2 px-3 btn btn-primary" />
       </form>
     </div>
   </div>
@@ -129,8 +129,8 @@
 
 {% if error == "no" %}
 <script>
-  alert('Registration Successful');
-  window.location = ('{% url 'emp_login' %}');
+  alert('Profile Updated Successfully');
+  window.location = ('{% url 'profile' %}');
 </script>
 {% endif %} {% if error == "yes" %}
 <script>

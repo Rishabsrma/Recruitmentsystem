@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 from django.contrib.auth import login, logout, authenticate
 # Create your views here.
@@ -37,11 +37,17 @@ def emp_login(request):
 
 
 def emp_home(request):
+    if not request.user.is_authenticated:
+        return redirect('emp_login')
     return render(request, 'emp_home.html')
 
-
+def Logout(request):
+    logout(request)
+    return redirect('index')
 
 def profile(request):
+    if not request.user.is_authenticated:
+        return redirect('emp_login')
     error = ""
     user = request.user
     employee = EmployeeDetail.objects.get(user=user)
@@ -49,11 +55,27 @@ def profile(request):
         fn = request.POST['firstname']
         ln = request.POST['lastname']
         ec = request.POST['empcode']
-        em = request.POST['email']
-        pwd = request.POST['pwd']
+        dept = request.POST['department']
+        designation = request.POST['designation']
+        contact = request.POST['contact']
+        jdate = request.POST['jdate']
+        gender = request.POST['gender']
+
+        employee.user.first_name = fn
+        employee.user.last_name = ln
+        employee.empcode = ec
+        employee.empdept = dept
+        employee.designation = designation
+        employee.contact = contact
+        employee.gender = gender
+
+        if jdate:
+            employee.joiningdate = jdate
+        
+
         try:
-            user = User.objects.create_user(first_name=fn, last_name=ln, username=em, password=pwd)
-            EmployeeDetail.objects.create(user = user,empcode=ec)
+            employee.save()
+            employee.user.save()
             error="no"
         except:
             error="yes"    
