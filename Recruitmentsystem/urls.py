@@ -30,4 +30,5 @@ urlpatterns = [
     path('edit_myexperience/', edit_myexperience,name='edit_myexperience'),
     path('my_education/', my_education,name='my_education'),
     path('edit_myeducation/', edit_myeducation,name='edit_myeducation'),
+    path('change_password/', change_password,name='change_password'),
 ]
