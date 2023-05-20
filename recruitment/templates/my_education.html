@@ -1,0 +1,86 @@
+{% extends 'emp_base.html' %} {% block main %}
+
+<div class="card shadow m-2">
+  <div class="card-body">
+    <a
+      href="{% url 'edit_myexperience' %}"
+      class="btn btn-danger float-right btn-sm"
+      >Edit Education Details</a
+    >
+    <h5 class="p-2 text-center">My Education Details</h5>
+
+    <div class="container-fluid"></div>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Masters</th>
+        <td>{{education.masters}}</td>
+      </tr>
+      <tr>
+        <th>University</th>
+        <td>{{education.unim}}</td>
+      </tr>
+      <tr>
+        <th>Year of Passing</th>
+        <td>{{education.yearofpassingmasters}}</td>
+      </tr>
+      <tr>
+        <th>Percentage in Masters</th>
+        <td>{{education.gpamasters}}</td>
+      </tr>
+
+      <tr>
+        <th>Bachelors</th>
+        <td>{{education.bachelors}}</td>
+      </tr>
+      <tr>
+        <th>College</th>
+        <td>{{education.unib}}</td>
+      </tr>
+      <tr>
+        <th>Year of Passing</th>
+        <td>{{education.yearofpassinguni}}</td>
+      </tr>
+      <tr>
+        <th>Percentage in Bachelors</th>
+        <td>{{education.gpauni}}</td>
+      </tr>
+
+      <tr>
+        <th>A-Levels/+2 College</th>
+        <td>{{education.college}}</td>
+      </tr>
+      <tr>
+        <th>College</th>
+        <td>{{education.colg}}</td>
+      </tr>
+      <tr>
+        <th>Year of Passing</th>
+        <td>{{education.yearofpassingcolg}}</td>
+      </tr>
+      <tr>
+        <th>Percentage in College</th>
+        <td>{{education.gpacolg}}</td>
+      </tr>
+
+      <tr>
+        <th>Higher Secondary School</th>
+        <td>{{education.school}}</td>
+      </tr>
+      <tr>
+        <th>School Name</th>
+        <td>{{education.scl}}</td>
+      </tr>
+      <tr>
+        <th>Year of Passing</th>
+        <td>{{education.yearofpassingscl}}</td>
+      </tr>
+      <tr>
+        <th>Percentage in School</th>
+        <td>{{education.gpascl}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

@@ -98,7 +98,7 @@ def my_experience(request):
     return render(request, 'myexperience.html', locals())
 
 
-def edit_experience(request):
+def edit_myexperience(request):
     if not request.user.is_authenticated:
         return redirect('emp_login')
     error = ""
@@ -142,4 +142,62 @@ def edit_experience(request):
             error="no"
         except:
             error="yes"    
-    return render(request, 'edit_experience.html', locals())
+    return render(request, 'edit_myexperience.html', locals())
+
+
+def my_education(request):
+    if not request.user.is_authenticated:
+        return redirect('emp_login')
+    
+    user = request.user
+    education = EmployeeEducation.objects.get(user=user)
+
+    
+    return render(request, 'my_education.html', locals())
+
+
+def edit_myeducation(request):
+    if not request.user.is_authenticated:
+        return redirect('emp_login')
+    error = ""
+    user = request.user
+    experience = EmployeeEducation.objects.get(user=user)
+    if request.method == 'POST':
+        company1name = request.POST['company1name']
+        company1position = request.POST['company1position']
+        company1salary = request.POST['company1salary']
+        company1duration = request.POST['company1duration']
+
+        company2name = request.POST['company2name']
+        company2position = request.POST['company2position']
+        company2salary = request.POST['company2salary']
+        company2duration = request.POST['company2duration']
+
+        company3name = request.POST['company3name']
+        company3position = request.POST['company3position']
+        company3salary = request.POST['company3salary']
+        company3duration = request.POST['company3duration']
+
+        experience.company1name = company1name
+        experience.company1position = company1position
+        experience.company1salary = company1salary
+        experience.company1duration = company1duration
+        
+        experience.company2name = company2name
+        experience.company2position = company2position
+        experience.company2salary = company2salary
+        experience.company2duration = company2duration
+
+        experience.company3name = company3name
+        experience.company3position = company3position
+        experience.company3salary = company3salary
+        experience.company3duration = company3duration
+
+
+
+        try:
+            experience.save()
+            error="no"
+        except:
+            error="yes"    
+    return render(request, 'edit_myeducation.html', locals())

@@ -17,26 +17,27 @@ class EmployeeDetail(models.Model):
 
 
 class EmployeeEducation(models.Model):
+
     user = models.ForeignKey(User,on_delete=models.CASCADE)
+    masters = models.CharField(max_length=100, null=True)   
+    unim = models.CharField(max_length=200,null=True) 
+    yearofpassingmasters = models.CharField(max_length=20,null=True) 
+    gpamasters = models.CharField(max_length=30,null=True)
+
     bachelors = models.CharField(max_length=100, null=True)   
-    uni = models.CharField(max_length=200,null=True) 
+    unib = models.CharField(max_length=200,null=True) 
     yearofpassinguni = models.CharField(max_length=20,null=True) 
     gpauni = models.CharField(max_length=30,null=True) 
 
-    coursecg = models.CharField(max_length=100, null=True)   
-    college = models.CharField(max_length=200,null=True) 
-    yearofpassingcg = models.CharField(max_length=20,null=True) 
-    gpacg = models.CharField(max_length=30,null=True) 
+    college = models.CharField(max_length=100, null=True)   
+    colg = models.CharField(max_length=200,null=True) 
+    yearofpassingcolg = models.CharField(max_length=20,null=True) 
+    gpacolg = models.CharField(max_length=30,null=True) 
 
-    coursessc = models.CharField(max_length=100, null=True)   
-    ssc = models.CharField(max_length=200,null=True) 
-    yearofpassingssc = models.CharField(max_length=20,null=True) 
-    gpassc = models.CharField(max_length=30,null=True) 
-    
-    coursesc = models.CharField(max_length=100, null=True)   
-    school = models.CharField(max_length=200,null=True) 
-    yearofpassingsc = models.CharField(max_length=20,null=True) 
-    gpasc = models.CharField(max_length=30,null=True) 
+    school = models.CharField(max_length=100, null=True)   
+    scl = models.CharField(max_length=200,null=True) 
+    yearofpassingscl = models.CharField(max_length=20,null=True) 
+    gpascl = models.CharField(max_length=30,null=True) 
 
     def __str__(self):
         return self.user.username
