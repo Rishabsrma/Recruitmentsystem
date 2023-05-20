@@ -3,7 +3,7 @@
 <div class="card shadow m-2">
   <div class="card-body">
     <a
-      href="{% url 'edit_myexperience' %}"
+      href="{% url 'edit_myeducation' %}"
       class="btn btn-danger float-right btn-sm"
       >Edit Education Details</a
     >
@@ -25,7 +25,7 @@
         <td>{{education.yearofpassingmasters}}</td>
       </tr>
       <tr>
-        <th>Percentage in Masters</th>
+        <th>GPA in Masters</th>
         <td>{{education.gpamasters}}</td>
       </tr>
 
@@ -42,7 +42,7 @@
         <td>{{education.yearofpassinguni}}</td>
       </tr>
       <tr>
-        <th>Percentage in Bachelors</th>
+        <th>GPA in Bachelors</th>
         <td>{{education.gpauni}}</td>
       </tr>
 
@@ -59,7 +59,7 @@
         <td>{{education.yearofpassingcolg}}</td>
       </tr>
       <tr>
-        <th>Percentage in College</th>
+        <th>GPA in College</th>
         <td>{{education.gpacolg}}</td>
       </tr>
 
@@ -76,7 +76,7 @@
         <td>{{education.yearofpassingscl}}</td>
       </tr>
       <tr>
-        <th>Percentage in School</th>
+        <th>GPA in School</th>
         <td>{{education.gpascl}}</td>
       </tr>
     </table>

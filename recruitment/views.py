@@ -161,42 +161,52 @@ def edit_myeducation(request):
         return redirect('emp_login')
     error = ""
     user = request.user
-    experience = EmployeeEducation.objects.get(user=user)
+    education = EmployeeEducation.objects.get(user=user)
     if request.method == 'POST':
-        company1name = request.POST['company1name']
-        company1position = request.POST['company1position']
-        company1salary = request.POST['company1salary']
-        company1duration = request.POST['company1duration']
+        masters = request.POST['masters']
+        unim = request.POST['unim']
+        yearofpassingmasters = request.POST['yearofpassingmasters']
+        gpamasters = request.POST['gpamasters']
 
-        company2name = request.POST['company2name']
-        company2position = request.POST['company2position']
-        company2salary = request.POST['company2salary']
-        company2duration = request.POST['company2duration']
+        bachelors = request.POST['bachelors']
+        unib = request.POST['unib']
+        yearofpassinguni = request.POST['yearofpassinguni']
+        gpauni = request.POST['gpauni']
 
-        company3name = request.POST['company3name']
-        company3position = request.POST['company3position']
-        company3salary = request.POST['company3salary']
-        company3duration = request.POST['company3duration']
+        college = request.POST['college']
+        colg = request.POST['colg']
+        yearofpassingcolg = request.POST['yearofpassingcolg']
+        gpacolg = request.POST['gpacolg']
 
-        experience.company1name = company1name
-        experience.company1position = company1position
-        experience.company1salary = company1salary
-        experience.company1duration = company1duration
+        school = request.POST['school']
+        scl = request.POST['scl']
+        yearofpassingscl = request.POST['yearofpassingscl']
+        gpascl = request.POST['gpascl']
+
+        education.masters = masters
+        education.unim = unim
+        education.yearofpassingmasters = yearofpassingmasters
+        education.gpamasters = gpamasters
         
-        experience.company2name = company2name
-        experience.company2position = company2position
-        experience.company2salary = company2salary
-        experience.company2duration = company2duration
+        education.bachelors = bachelors
+        education.unib = unib
+        education.yearofpassinguni = yearofpassinguni
+        education.gpauni = gpauni
 
-        experience.company3name = company3name
-        experience.company3position = company3position
-        experience.company3salary = company3salary
-        experience.company3duration = company3duration
+        education.college = college
+        education.colg = colg
+        education.yearofpassingcolg = yearofpassingcolg
+        education.gpacolg = gpacolg
+
+        education.school = school
+        education.scl = scl
+        education.yearofpassingscl = yearofpassingscl
+        education.gpascl = gpascl
 
 
 
         try:
-            experience.save()
+            education.save()
             error="no"
         except:
             error="yes"    
