@@ -34,50 +34,50 @@
           </center>
           <div class="list-group">
             <a
-              href=""
-              class="list-group-item list-group-item-warning list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}"
+              href="{% url 'emp_home' %}"
+              class="list-group-item list-group-item-primary list-group-item-action {% if request.path == '/emp_home' %} active {% endif %}"
               >Dashboard</a
             >
             <a
-              href=""
-              class="list-group-item list-group-item-warning list-group-item-action"
+              href="{% url 'profile' %}"
+              class="list-group-item list-group-item-primary list-group-item-action"
               >Profile</a
             >
             <a
               href=""
-              class="list-group-item list-group-item-warning list-group-item-action"
+              class="list-group-item list-group-item-primary list-group-item-action"
               >My Experience</a
             >
             <a
               href=""
-              class="list-group-item list-group-item-warning list-group-item-action"
+              class="list-group-item list-group-item-primary list-group-item-action"
               >Edit My Experience</a
             >
             <a
               href=""
-              class="list-group-item list-group-item-warning list-group-item-action"
+              class="list-group-item list-group-item-primary list-group-item-action"
               >My Education</a
             >
             <a
               href=""
-              class="list-group-item list-group-item-warning list-group-item-action"
+              class="list-group-item list-group-item-primary list-group-item-action"
               >Edit My Education</a
             >
             <a
               href=""
-              class="list-group-item list-group-item-warning list-group-item-action"
+              class="list-group-item list-group-item-primary list-group-item-action"
               >Change Password</a
             >
             <a
               href=""
-              class="list-group-item list-group-item-warning list-group-item-action"
+              class="list-group-item list-group-item-primary list-group-item-action"
               >Logout</a
             >
           </div>
         </div>
         <div class="col-sm-10 p-0">
           <div class="container-fluid p-2">
-            <h5 class="text-center">Employee Records</h5>
+            <h4 class="text-center">Employee Records</h4>
 
             <div class="card shadow" style="min-height: 89vh">
               <div class="card-body">{% block main %} {% endblock %}</div>

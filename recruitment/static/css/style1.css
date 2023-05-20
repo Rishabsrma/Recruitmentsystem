@@ -5,14 +5,15 @@
 .text-center {
   padding: 3px;
   font-weight: bold;
-  border-bottom: 2px solid rgb(52, 93, 52);
-  border-top: 2px solid rgb(52, 93, 52);
+  /* border-bottom: 2px solid rgb(0, 0, 0);
+  border-top: 2px solid rgb(0, 0, 0); */
 }
 
 .emp {
   text-align: center;
-  color: #524eb7;
-  border-bottom: 2px solid rgb(52, 93, 52);
+  color: #fff;
+  background-color: #524eb7;
+  border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 .text {
